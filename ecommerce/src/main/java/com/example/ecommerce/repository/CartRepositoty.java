@@ -5,8 +5,8 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.ecommerce.entity.User;
+import com.example.ecommerce.entity.Cart;
 
-public interface UserRepository extends JpaRepository<User, UUID> {
-    Optional<User> findByEmail(String email);
+public interface CartRepositoty extends JpaRepository<Cart, UUID> {
+    Optional<Cart> findByUserId(UUID userId);
 }

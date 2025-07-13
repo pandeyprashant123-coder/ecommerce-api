@@ -1,5 +1,7 @@
 package com.example.ecommerce.service;
 
+import java.util.UUID;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +32,7 @@ public class UserService {
         return repository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("User doesn't exists"));
     }
 
-    public User getUserById(Long id) {
+    public User getUserById(UUID id) {
         return repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
     }
